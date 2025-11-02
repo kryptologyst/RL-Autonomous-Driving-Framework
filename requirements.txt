@@ -1,0 +1,37 @@
+# Core RL libraries
+gymnasium>=0.29.0
+gymnasium[box2d]>=0.29.0
+stable-baselines3>=2.0.0
+ray[rllib]>=2.8.0
+
+# Deep learning
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.24.0
+
+# Visualization and analysis
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.15.0
+
+# Configuration and utilities
+pyyaml>=6.0
+hydra-core>=1.3.0
+tensorboard>=2.13.0
+wandb>=0.15.0
+
+# Development and testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.5.0
+
+# Optional: Jupyter and Streamlit for UI
+jupyter>=1.0.0
+streamlit>=1.25.0
+ipywidgets>=8.0.0
+
+# Optional: Additional environments
+gymnasium[atari]>=0.29.0
+gymnasium[mujoco]>=0.29.0

@@ -1,0 +1,71 @@
+# Configuration file for RL Autonomous Driving Project
+
+# Environment settings
+environment:
+  name: "CarRacing-v2"
+  continuous: true
+  domain_randomize: false
+  render_mode: null  # Set to "human" for visualization
+  
+# Alternative environments for testing
+mock_environments:
+  - "CartPole-v1"
+  - "MountainCar-v0"
+  - "LunarLander-v2"
+
+# Agent settings
+agent:
+  algorithm: "PPO"  # Options: PPO, SAC, TD3, DQN, Rainbow
+  learning_rate: 3e-4
+  gamma: 0.99
+  epsilon: 0.1
+  batch_size: 64
+  buffer_size: 10000
+  
+# PPO specific settings
+ppo:
+  clip_range: 0.2
+  value_loss_coef: 0.5
+  entropy_coef: 0.01
+  max_grad_norm: 0.5
+  n_epochs: 10
+  
+# SAC specific settings
+sac:
+  tau: 0.005
+  alpha: 0.2
+  target_update_interval: 1
+  
+# Training settings
+training:
+  total_timesteps: 1000000
+  eval_freq: 10000
+  save_freq: 50000
+  log_freq: 1000
+  n_eval_episodes: 5
+  
+# Model architecture
+model:
+  input_shape: [1, 64, 64]
+  action_dim: 3
+  hidden_size: 256
+  conv_channels: [16, 32]
+  conv_kernels: [8, 4]
+  conv_strides: [4, 2]
+  
+# Logging and monitoring
+logging:
+  use_tensorboard: true
+  use_wandb: false
+  wandb_project: "rl-autonomous-driving"
+  log_dir: "./logs"
+  
+# Visualization
+visualization:
+  plot_freq: 100
+  save_plots: true
+  plot_dir: "./plots"
+  
+# Hardware
+device: "auto"  # auto, cpu, cuda, mps
+num_envs: 1
